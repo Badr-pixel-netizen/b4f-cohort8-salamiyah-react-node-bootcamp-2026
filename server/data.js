@@ -1,7 +1,6 @@
 // Deterministic seed data for the B4F Hub local API.
 // Restarting the server resets everything back to this exact state — this is
-// intentional, so the assessment is reproducible for every student and for
-// re-grading.
+// intentional, so everyone starts from the same data every time.
 
 export const initialPosts = [
   {

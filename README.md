@@ -5,48 +5,76 @@ Student-facing repository for the **B4F Hub** bridge project — the first proje
 
 ## What this project is
 
-B4F Hub extends a React application you already know how to build, and pairs it with a real
-Node.js/Express backend. It is deliberately a **bridge**, not a full product — it stays small and
-focused so the transition between phases is clear.
+B4F Hub is a React application you already know how to build, paired with a real Node.js/Express
+server that runs on its own. It is deliberately a **bridge**, not a full product — it stays small
+and focused so the transition between phases is clear.
 
-**Frontend additions:** React Router (real pages/navigation), Context (a light/dark theme
-example), Redux Toolkit (for the application's genuinely shared state).
+**What exists right now:**
 
-**Backend:** Node.js and Express, written in TypeScript, with a clean routes/controllers/
-middleware/config structure, environment-based configuration, CORS, and consistent error handling.
+- **`client/`** — a React + TypeScript + Vite frontend.
+- **`server/`** — a simple, standalone Node.js + Express server written in plain JavaScript. Its
+  data is deterministic and lives in memory only.
 
-**Deliberately out of scope here:** no database, no authentication, no NestJS, no Next.js. Those
-belong to the main Bootcamp project (`b4f-cohort8-salamiyah-next-nest-bootcamp-2026`) — this
-repository stays a compact bridge.
+**What does not exist (yet, or at all in this project):** no database, no authentication, no
+NestJS, no Next.js. The server is intentionally simple today; how the backend is organized will
+evolve later during the Bootcamp, step by step, as we reach those topics in class. The main
+Bootcamp project lives in `b4f-cohort8-salamiyah-next-nest-bootcamp-2026`.
+
+## Repository structure
+
+This repository holds **two separate projects**, each with its own `package.json` and its own
+`node_modules`:
+
+```
+.
+├── client/     the React + TypeScript + Vite frontend
+├── server/     the Node.js + Express server (plain JavaScript, in-memory data)
+├── README.md   this file
+└── .gitignore
+```
+
+They are independent programs. You run them side by side, in two terminals.
+
+## Setup and running
+
+You need [Node.js](https://nodejs.org/) 18 or newer.
+
+**Terminal 1 — the server (port 3001):**
+
+```bash
+cd server
+npm install
+npm start
+```
+
+**Terminal 2 — the client (port 5173):**
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Then open the address Vite prints (normally http://localhost:5173). The client forwards every
+request that starts with `/api` to the server on port 3001, so both must be running.
+
+The server keeps its data in memory. Restarting it (`Ctrl+C`, then `npm start` again) resets
+posts and opportunities to their original seed data.
+
+Other client commands (run inside `client/`): `npm run build` and `npm run lint`.
 
 ## Learning progression
 
 This project follows the classroom as it happens: Router → Context → Redux concepts → Redux
-Toolkit → Node.js fundamentals → hardening the Express backend. Each session builds on the last.
-The exact pace is flexible and led by actual classroom progress, not a fixed calendar.
-
-## Repository structure
-
-At this stage the repository holds only its foundation. Session-by-session application code is
-added as the course actually reaches each topic — this README will be extended as that content
-lands, rather than describing project structure that doesn't exist yet.
-
-```
-.
-├── README.md     this file
-└── .gitignore
-```
-
-## Setup
-
-Setup instructions will be added once the first session's starting project is published here.
+Toolkit → Node.js fundamentals → Express. Each session builds on the last. The exact pace is
+flexible and led by actual classroom progress, not a fixed calendar.
 
 ## Branch model
 
 - **`main`** — protected, instructor-managed baseline. Students do not push to `main` directly.
-- **Student branches** — each enrolled student receives one permanent branch in this repository,
-  named after their verified GitHub username. Branch provisioning happens once the course roster
-  is finalized; it has not happened yet as of this repository's creation.
+- **Student branches** — each enrolled student has one permanent branch in this repository,
+  named `student-<your-github-username>` in lowercase (for example, GitHub user `Fadi-Habil17`
+  works on `student-fadi-habil17`). You can push only to your own branch.
 - **Personal forks** — you are always welcome to fork this repository into your own GitHub account
   to freely practice feature branches, pull requests, merging, and recovering from mistakes, on
   your own time. That is separate from your assigned branch here, and has no effect on it.
@@ -55,5 +83,5 @@ Setup instructions will be added once the first session's starting project is pu
 
 `main` is updated only by the instructor, and reflects the official state of the course at any
 given point. Students work on their own assigned branch and pull instructor updates from `main`
-into it as the course progresses. A full Git/GitHub handbook will be published here before student
-branches are created.
+into it as the course progresses. A full Git/GitHub handbook will be published here before
+students start working in their branches.

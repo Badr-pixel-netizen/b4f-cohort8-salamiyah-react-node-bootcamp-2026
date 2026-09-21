@@ -1,13 +1,11 @@
-// B4F Hub — local assessment API.
+// B4F Hub — local API.
 //
-// This is infrastructure for the take-home assessment, not something students
-// are asked to build or modify. It loads deterministic seed data on startup;
-// all mutations (new posts, likes, applications) live only in memory and are
-// reset the next time this server restarts. That reset-on-restart behavior is
-// intentional — it keeps the assessment reproducible for every student and
-// for re-grading.
+// A small standalone Express server. It loads deterministic seed data on startup;
+// all changes (new posts, likes, applications) live only in memory and are reset
+// the next time this server restarts.
 //
-// Run with: node server/index.js  (already wired into `npm run dev`).
+// Run with: npm start  (from inside the server/ folder — the client/ folder is a
+// separate project and is started in its own terminal).
 
 import express from "express";
 import { initialPosts, initialOpportunities } from "./data.js";
@@ -29,24 +27,10 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// ---------- Reference-solution-only demo helper ----------
-// Append ?fail=true to a GET request to force a 500 response, for easily
-// demonstrating the error + Retry state on camera. This exists ONLY in the
-// instructor's reference server — it is deliberately left out of the student
-// starter's copy of this same file, per the assessment's own design rule
-// that developer-only test switches must not reach students.
-function shouldSimulateFailure(req) {
-  return req.query.fail === "true";
-}
-
 // ---------- Community ----------
 
 app.get("/api/posts", async (req, res) => {
   await delay(350);
-
-  if (shouldSimulateFailure(req)) {
-    return res.status(500).json({ error: "Simulated server error (fail=true)." });
-  }
 
   const sorted = [...posts].sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
@@ -127,10 +111,6 @@ app.patch("/api/posts/:id", (req, res) => {
 
 app.get("/api/opportunities", async (req, res) => {
   await delay(350);
-
-  if (shouldSimulateFailure(req)) {
-    return res.status(500).json({ error: "Simulated server error (fail=true)." });
-  }
 
   res.json(opportunities);
 });
