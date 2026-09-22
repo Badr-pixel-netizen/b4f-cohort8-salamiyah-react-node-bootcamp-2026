@@ -1,13 +1,14 @@
-import { useState } from "react";
-import type { AppNotification, NotificationTone } from "./types";
+import {useState} from "react";
+import type {AppNotification, NotificationTone} from "./types";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ToastQueue from "./components/ToastQueue";
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CommunityPage from "./pages/CommunityPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
 import OpportunityDetailPage from "./pages/OpportunityDetailPage";
+import PageNotFound from "./pages/PageNotFound";
 
 let nextNotificationId = 1;
 
@@ -53,6 +54,7 @@ function App() {
             path="/opportunities/:id"
             element={<OpportunityDetailPage onNotify={addNotification} />}
           />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         {/* <CommunitySection onNotify={addNotification} />
         <OpportunitiesSection onNotify={addNotification} /> */}
