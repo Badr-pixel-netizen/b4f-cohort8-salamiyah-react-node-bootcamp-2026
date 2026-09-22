@@ -16,7 +16,7 @@ function Navbar() {
       </p>
 
       <nav className="navbar-links">
-        <NavLink to="/" className={navLinkClassName}>
+        <NavLink to="/" end className={navLinkClassName}>
           Home
         </NavLink>
         <NavLink to="/community" className={navLinkClassName}>
