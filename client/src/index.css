@@ -879,3 +879,12 @@ textarea {
   gap: 12px;
   color: #6b7089;
 }
+
+.not-found-container {
+  text-align: center;
+  padding: 10rem 30rem;
+}
+.home-link-card {
+  display: inline-block;
+  margin-top: 1rem;
+}
