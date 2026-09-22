@@ -5,8 +5,6 @@ interface OpportunityListProps {
   opportunities: Opportunity[];
   savedIds: Set<number>;
   onToggleSaved: (id: number) => void;
-  expandedId: number | null;
-  onToggleExpanded: (id: number) => void;
   onApply: (id: number) => void;
   applyingId: number | null;
 }
@@ -15,8 +13,6 @@ function OpportunityList({
   opportunities,
   savedIds,
   onToggleSaved,
-  expandedId,
-  onToggleExpanded,
   onApply,
   applyingId,
 }: OpportunityListProps) {
@@ -28,8 +24,6 @@ function OpportunityList({
           opportunity={opportunity}
           isSaved={savedIds.has(opportunity.id)}
           onToggleSaved={onToggleSaved}
-          isExpanded={expandedId === opportunity.id}
-          onToggleExpanded={onToggleExpanded}
           onApply={onApply}
           isApplying={applyingId === opportunity.id}
         />

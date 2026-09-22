@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CommunityPage from "./pages/CommunityPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
+import OpportunityDetailPage from "./pages/OpportunityDetailPage";
 
 let nextNotificationId = 1;
 
@@ -47,6 +48,10 @@ function App() {
           <Route
             path="/opportunities"
             element={<OpportunitiesPage onNotify={addNotification} />}
+          />
+          <Route
+            path="/opportunities/:id"
+            element={<OpportunityDetailPage onNotify={addNotification} />}
           />
         </Routes>
         {/* <CommunitySection onNotify={addNotification} />
