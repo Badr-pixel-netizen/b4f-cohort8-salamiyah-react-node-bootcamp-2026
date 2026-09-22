@@ -7,10 +7,13 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="navbar-brand">
-        <span className="navbar-logo">B4F</span>
-        <span className="navbar-title">Hub</span>
-      </div>
+      <NavLink to="/" end className="navbar-brand-link" aria-label="B4F Hub home">
+        <div className="navbar-brand">
+          <span className="navbar-logo">B4F</span>
+          <span className="navbar-title">Hub</span>
+        </div>
+      </NavLink>
+
       <p className="navbar-tagline">
         Community &amp; Opportunities for B4F trainees and alumni
       </p>

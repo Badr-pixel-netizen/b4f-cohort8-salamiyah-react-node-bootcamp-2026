@@ -39,6 +39,17 @@ textarea {
   flex-shrink: 0;
 }
 
+.navbar-brand-link {
+  color: inherit;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.navbar-brand-link:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 4px;
+}
+
 .navbar-brand {
   display: flex;
   align-items: baseline;
@@ -878,4 +889,71 @@ textarea {
   flex-direction: column;
   gap: 12px;
   color: #6b7089;
+}
+
+/* ---------- Not found page ---------- */
+
+.not-found-page {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(28px, 6vw, 72px) 24px;
+  border: 1px solid #e4e6f0;
+  border-radius: 14px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.not-found-code {
+  margin-top: auto;
+  padding: 8px 24px;
+  border-radius: 16px;
+  background-color: #eef0ff;
+  color: #4f46e5;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+.not-found-title {
+  color: #1e2130;
+  font-size: clamp(24px, 4vw, 32px);
+  line-height: 1.3;
+}
+
+.not-found-description {
+  max-width: 440px;
+  color: #6b7089;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.not-found-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: auto;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.not-found-home-link:hover {
+  background-color: #4338ca;
+}
+
+.not-found-home-link:focus-visible {
+  outline: 3px solid #4f46e5;
+  outline-offset: 4px;
 }
