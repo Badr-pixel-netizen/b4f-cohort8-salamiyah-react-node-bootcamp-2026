@@ -2,9 +2,11 @@ import { useState } from "react";
 import type { AppNotification, NotificationTone } from "./types";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import CommunitySection from "./components/CommunitySection";
-import OpportunitiesSection from "./components/OpportunitiesSection";
 import ToastQueue from "./components/ToastQueue";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CommunityPage from "./pages/CommunityPage";
+import OpportunitiesPage from "./pages/OpportunitiesPage";
 
 let nextNotificationId = 1;
 
@@ -15,14 +17,20 @@ function App() {
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
 
   function addNotification(message: string, tone: NotificationTone) {
-    const notification: AppNotification = { id: nextNotificationId, message, tone };
+    const notification: AppNotification = {
+      id: nextNotificationId,
+      message,
+      tone,
+    };
     nextNotificationId += 1;
 
     setNotifications([...notifications, notification]);
   }
 
   function dismissFrontNotification() {
-    setNotifications(notifications.filter((_notification, index) => index !== 0));
+    setNotifications(
+      notifications.filter((_notification, index) => index !== 0),
+    );
   }
 
   return (
@@ -30,13 +38,27 @@ function App() {
       <Navbar />
 
       <main className="main-layout">
-        <CommunitySection onNotify={addNotification} />
-        <OpportunitiesSection onNotify={addNotification} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/community"
+            element={<CommunityPage onNotify={addNotification} />}
+          />
+          <Route
+            path="/opportunities"
+            element={<OpportunitiesPage onNotify={addNotification} />}
+          />
+        </Routes>
+        {/* <CommunitySection onNotify={addNotification} />
+        <OpportunitiesSection onNotify={addNotification} /> */}
       </main>
 
       <Footer />
 
-      <ToastQueue notifications={notifications} onDismissFront={dismissFrontNotification} />
+      <ToastQueue
+        notifications={notifications}
+        onDismissFront={dismissFrontNotification}
+      />
     </div>
   );
 }
