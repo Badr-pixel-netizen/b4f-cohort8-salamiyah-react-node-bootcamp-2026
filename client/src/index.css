@@ -879,3 +879,41 @@ textarea {
   gap: 12px;
   color: #6b7089;
 }
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  gap: 16px;
+  flex: 1;
+}
+
+.not-found-title {
+  font-size: 55px;
+  font-weight: 500;
+  color: #4f46e5;
+  line-height: 1;
+}
+
+.not-found-message {
+  font-size: 16px;
+  color: #6b7089;
+  max-width: 400px;
+}
+
+.not-found-link {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.not-found-link:hover {
+  background-color: #4338ca;
+}

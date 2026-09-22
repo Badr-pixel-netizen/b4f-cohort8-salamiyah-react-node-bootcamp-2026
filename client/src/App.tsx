@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import CommunityPage from "./pages/CommunityPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
 import OpportunityDetailPage from "./pages/OpportunityDetailPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 let nextNotificationId = 1;
 
@@ -53,6 +54,7 @@ function App() {
             path="/opportunities/:id"
             element={<OpportunityDetailPage onNotify={addNotification} />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {/* <CommunitySection onNotify={addNotification} />
         <OpportunitiesSection onNotify={addNotification} /> */}
