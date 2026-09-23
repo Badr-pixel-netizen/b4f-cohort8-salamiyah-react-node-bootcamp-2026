@@ -77,6 +77,46 @@ textarea {
   overflow: hidden;
 }
 
+.page-not-found {
+  width: min(100%, 620px);
+  margin: auto;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.page-not-found-code {
+  color: #4f46e5;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.page-not-found h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.page-not-found p:not(.page-not-found-code) {
+  color: #6b7089;
+}
+
+.page-not-found-link {
+  display: inline-block;
+  margin-top: 22px;
+  background-color: #4f46e5;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  text-decoration: none;
+}
+
+.page-not-found-link:hover {
+  background-color: #4338ca;
+}
+
 .panel {
   flex: 1;
   min-width: 0;
