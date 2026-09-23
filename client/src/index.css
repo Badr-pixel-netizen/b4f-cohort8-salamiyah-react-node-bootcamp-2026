@@ -879,3 +879,32 @@ textarea {
   gap: 12px;
   color: #6b7089;
 }
+
+/* ---------- Not-Found-page page ---------- */
+.not-found {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 28px;
+}
+
+.not-found p {
+  color: #6b7089;
+}
+
+.not-found a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.not-found a:hover {
+  text-decoration: underline;
+}
