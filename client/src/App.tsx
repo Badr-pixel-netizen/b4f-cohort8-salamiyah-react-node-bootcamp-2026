@@ -17,6 +17,7 @@ function App() {
   // whichever action triggered them, and always displayed/removed from the
   // FRONT (index 0) by ToastQueue, one at a time, in the order they happened.
   const [notifications, setNotifications] = useState<AppNotification[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   function addNotification(message: string, tone: NotificationTone) {
     const notification: AppNotification = {
@@ -36,8 +37,11 @@ function App() {
   }
 
   return (
-    <div className="page">
-      <Navbar />
+    <div className={`page ${isDarkMode ? "dark-mode" : ""}`}>
+      <Navbar
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
+      />
 
       <main className="main-layout">
         <Routes>

@@ -1,0 +1,134 @@
+.dark-mode {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.dark-mode .navbar,
+.dark-mode .footer,
+.dark-mode .panel,
+.dark-mode .home-page,
+.dark-mode .post-card,
+.dark-mode .opportunity-card {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark-mode .navbar-title,
+.dark-mode .panel-title,
+.dark-mode .home-title,
+.dark-mode .home-link-title,
+.dark-mode .opportunity-title,
+.dark-mode .page-not-found h1 {
+  color: #f9fafb;
+}
+
+.dark-mode .navbar-tagline,
+.dark-mode .home-subtitle,
+.dark-mode .home-link-description,
+.dark-mode .opportunity-company,
+.dark-mode .footer,
+.dark-mode .page-not-found p:not(.page-not-found-code) {
+  color: #9ca3af;
+}
+
+.dark-mode .panel-header,
+.dark-mode .footer {
+  border-color: #374151;
+}
+
+.dark-mode .message,
+.dark-mode .post-composer,
+.dark-mode .opportunity-details,
+.dark-mode .home-link-card,
+.dark-mode .skill-tag {
+  background-color: #111827;
+  border-color: #374151;
+}
+
+.dark-mode .message,
+.dark-mode .empty-state,
+.dark-mode .filters-count,
+.dark-mode .post-timestamp,
+.dark-mode .like-count,
+.dark-mode .opportunity-deadline,
+.dark-mode .footer-muted {
+  color: #9ca3af;
+}
+
+.dark-mode .post-composer-input,
+.dark-mode .post-composer-select,
+.dark-mode .search-input,
+.dark-mode .filter-select {
+  background-color: #111827;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.dark-mode .post-content,
+.dark-mode .opportunity-description {
+  color: #d1d5db;
+}
+
+.dark-mode .category-chip,
+.dark-mode .like-button,
+.dark-mode .work-mode-badge,
+.dark-mode .location-badge {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+.dark-mode .category-chip:hover,
+.dark-mode .like-button:hover:not(:disabled),
+.dark-mode .view-details-button:hover,
+.dark-mode .home-link-card:hover {
+  border-color: #818cf8;
+}
+
+.dark-mode .post-card,
+.dark-mode .opportunity-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .nav-link {
+  color: #9ca3af;
+}
+
+.dark-mode .nav-link:hover {
+  color: #f9fafb;
+  background-color: #374151;
+}
+
+.dark-mode .nav-link-active,
+.dark-mode .home-link-card:hover {
+  background-color: #312e81;
+}
+
+.dark-mode .view-details-button,
+.dark-mode .back-button {
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.dark-mode .back-to-previous-button {
+  border-top-color: #374151;
+}
+
+.dark-mode .theme-toggle {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.theme-toggle {
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.theme-toggle:hover {
+  opacity: 0.85;
+}

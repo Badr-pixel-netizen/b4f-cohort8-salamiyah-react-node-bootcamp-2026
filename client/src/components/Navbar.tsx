@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+type NavbarProps = {
+  isDarkMode: boolean;
+  onToggleDarkMode: () => void;
+};
+
+function Navbar({ isDarkMode, onToggleDarkMode }: NavbarProps) {
   function navLinkClassName({ isActive }: { isActive: boolean }) {
     return isActive ? "nav-link nav-link-active" : "nav-link";
   }
@@ -26,6 +31,14 @@ function Navbar() {
           Opportunities
         </NavLink>
       </nav>
+      <button
+        className="theme-toggle"
+        type="button"
+        onClick={onToggleDarkMode}
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDarkMode ? "Light" : "Dark"}
+      </button>
     </header>
   );
 }
